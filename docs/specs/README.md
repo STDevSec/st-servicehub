@@ -32,8 +32,16 @@ INTENT → SPEC → PLAN → TASKS → IMPLEMENT → VERIFY
 2. Completa como mínimo las secciones hasta **Criterios de aceptación** y súbela en un PR propio
    (`docs/<issue-id>-...`) o como primer commit de la rama de la feature.
 3. Revisa los criterios de aceptación con tu equipo antes de implementar.
-4. Completa **Plan**, **Tareas**, **Pruebas** y **Evidencias** a medida que avanzas.
+4. Completa **Plan**, **Tareas**, **Implementación** (desviaciones y uso de IA), **Pruebas** y **Evidencias**
+   a medida que avanzas.
 5. Si la implementación revela que la spec era incorrecta, **actualiza la spec**: debe reflejar lo entregado.
+
+## SDD no es "generar código con IA"
+
+La spec no es un *prompt* para que una herramienta escriba el código. Es el acuerdo que **tú** debes
+entender y poder defender: la IA puede ayudarte a redactarla o a implementarla, pero cada criterio de
+aceptación se verifica con pruebas que comprendes, y en la defensa técnica tendrás que explicar
+cualquier decisión. Ver la [política de IA](../learning/ai-development-policy.md).
 
 ## Buenas prácticas
 

@@ -8,7 +8,8 @@
 ## Contexto
 
 ST ServiceHub está compuesto por tres microservicios obligatorios, dos opcionales y una aplicación
-Angular. Lo desarrollan varios equipos de estudiantes durante tres semanas, con supervisión docente.
+Angular. Lo desarrollan varios equipos de estudiantes durante las tres semanas de desarrollo de un curso
+de cuatro, con supervisión docente.
 
 Hay que decidir si cada componente vive en su propio repositorio (*polyrepo*) o si todos conviven en un
 único repositorio (*monorepo*).
@@ -36,7 +37,7 @@ propio pipeline. **Monorepo no significa monolito.**
 
 1. **Un repositorio por servicio (polyrepo):** refleja mejor la independencia real en producción, pero
    multiplica la configuración (permisos, plantillas, CI), dispersa la documentación y complica la
-   revisión de cambios transversales. Excesivo para un curso de tres semanas.
+   revisión de cambios transversales. Excesivo para tres semanas de desarrollo.
 2. **Monolito modular:** más sencillo de ejecutar, pero no cumple el objetivo educativo de practicar
    microservicios con despliegue independiente.
 

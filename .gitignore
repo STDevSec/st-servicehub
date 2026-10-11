@@ -92,6 +92,15 @@ secrets/
 **/application-secret*.properties
 
 # ---------------------------------------------------------------
+# Bases de datos locales (pueden contener datos de prueba o personales)
+# ---------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.mv.db
+*.trace.db
+
+# ---------------------------------------------------------------
 # Docker
 # ---------------------------------------------------------------
 docker-compose.override.yml

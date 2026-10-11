@@ -26,4 +26,5 @@ mvnw  text eol=lf
 *.eot   binary
 
 # Archivos generados: se colapsan en las vistas de diff de GitHub.
-package-lock.json linguist-generated=true -diff
+# No se usa `-diff`: los cambios de dependencias deben poder revisarse con `git diff`.
+package-lock.json linguist-generated=true

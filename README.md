@@ -147,6 +147,7 @@ st-servicehub/
 │   ├── decisions/           # Architecture Decision Records (ADR)
 │   ├── specs/               # Especificaciones de features (Spec-Driven Development)
 │   ├── api/                 # Contratos OpenAPI
+│   ├── audits/              # Auditorías del repositorio
 │   └── learning/            # Guía del estudiante y política de IA
 ├── frontend/
 │   └── angular-app/         # Aplicación Angular (por crear)
@@ -172,7 +173,8 @@ Los directorios vacíos contienen un archivo `.gitkeep` únicamente para que Git
 **Conocimientos:** Java y programación orientada a objetos, fundamentos de HTTP/REST, SQL básico,
 TypeScript básico y Git básico.
 
-**Herramientas** (las versiones se confirmarán al inicio de la semana 2):
+**Herramientas** (las versiones se confirmarán durante la semana 1; ver
+[decisiones técnicas pendientes](docs/architecture/technical-decisions-pending.md)):
 
 - Git y una cuenta de GitHub con acceso al repositorio.
 - JDK LTS.
@@ -197,7 +199,7 @@ TypeScript básico y Git básico.
 
 Cada estudiante debe entregar:
 
-- **Dos vertical slices completas** dentro de su equipo.
+- **Dos vertical slices completas y propias** (individuales) dentro de su equipo.
 - **Una contribución transversal** (acordada entre equipos), por ejemplo: seguridad compartida,
   pipeline de CI, Docker Compose, contratos OpenAPI o pruebas de integración.
 
@@ -252,6 +254,7 @@ docs(architecture): describe service boundaries
 | Estructura del repositorio | ✅ Creada |
 | Documentación de arquitectura, ADR, plantillas y guías | ✅ Creada |
 | Plantillas de Issues y Pull Requests | ✅ Creadas |
+| Protección de la rama `main` | ✅ Aplicada (PR + 1 aprobación; sin checks de CI todavía) |
 | Identity / Client / Ticket Service | ⏳ Planificado, sin código |
 | Project / Notification Service | ⏳ Opcional, sin código |
 | Angular App | ⏳ Planificado, sin código |
@@ -261,22 +264,26 @@ docs(architecture): describe service boundaries
 
 ### Decisiones pendientes
 
-- Versión exacta de Java LTS y versión compatible de Spring Boot.
-- Versión de Angular y Node.js.
-- Motor de base de datos relacional.
-- Mecanismo concreto de autenticación entre frontend y servicios (p. ej. JWT).
-- Necesidad de un API Gateway.
+Las decisiones técnicas (versiones de Java, Spring Boot, Angular y Node.js, motor de base de datos,
+autenticación, autorización, contratos, versionado de APIs, pruebas y CI/CD) se analizan, con
+alternativas y recomendación, en
+[technical-decisions-pending.md](docs/architecture/technical-decisions-pending.md).
+
+Otras decisiones organizativas pendientes:
+
 - Responsables reales en `CODEOWNERS`.
 - Licencia del repositorio (ver [LICENSE-DECISION.md](LICENSE-DECISION.md)).
+
+La última auditoría del repositorio está en [docs/audits/bootstrap-audit.md](docs/audits/bootstrap-audit.md).
 
 ## 14. Roadmap
 
 | Semana | Objetivo | Entregables esperados |
 |--------|----------|-----------------------|
-| **1 — Inducción** | Herramientas, metodología y arquitectura | Entorno local listo, equipos formados, versiones confirmadas |
-| **2 — Fundamentos** | Esqueleto de servicios y primeras slices | Proyectos Spring Boot y Angular creados, autenticación básica, CRUD inicial de clientes, primera spec por estudiante, contratos OpenAPI iniciales |
-| **3 — Integración** | Flujo principal de tickets | Ciclo de vida de tickets, asignaciones y comentarios, integración Ticket → Client, autorización por roles, Docker por servicio, pipeline CI inicial |
-| **4 — Consolidación** | Calidad, seguridad y cierre | Servicios opcionales (si aplica), Docker Compose, pruebas de integración, revisión de seguridad, documentación final y demo |
+| **1 — Inducción técnica** | Herramientas, metodología y arquitectura | Entorno local listo, equipos formados, decisiones técnicas pendientes cerradas (ADR) |
+| **2 — Arquitectura e implementación inicial** | Especificaciones, contratos y primeras slices | Specs aprobadas, contratos OpenAPI iniciales, proyectos Spring Boot y Angular creados, autenticación básica, primeras vertical slices (p. ej. clientes) |
+| **3 — Integración, testing, Docker y Jenkins** | Flujo principal de tickets e infraestructura | Ciclo de vida de tickets, asignaciones y comentarios, integración Ticket → Client, autorización por roles, pruebas de integración, Dockerfile por servicio, Docker Compose local, pipeline CI inicial |
+| **4 — Estabilización, seguridad, despliegue y defensa** | Calidad y cierre | Servicios opcionales (si aplica), corrección de defectos, revisión de seguridad, despliegue de demostración, documentación final y defensa técnica individual |
 
 ## 15. Información institucional
 

@@ -31,10 +31,12 @@ Issue → Spec → Branch → Commits → Tests → PR → Review → CI → Mer
 6. **Ejecutar las pruebas** localmente. Añade o actualiza pruebas para todo comportamiento nuevo.
 7. **Crear commits descriptivos** con Conventional Commits.
 8. **Abrir un Pull Request** usando la plantilla. Enlaza el Issue (`Closes #<id>`) y la spec.
-9. **Solicitar revisión** al menos a una persona que no sea autora del cambio.
+9. **Solicitar revisión** al menos a una persona que no sea autora del cambio (ver
+   [política de revisión para equipos pequeños](#política-de-revisión-para-equipos-pequeños)).
 10. **Verificar la CI.** Cuando exista el pipeline, todas las verificaciones deben pasar.
 11. **Integrar los cambios.** Una vez aprobado y en verde, se integra mediante *squash merge* (recomendado)
-    y se elimina la rama.
+    y se elimina la rama. El *squash* deja un único commit en `main`, que enlaza al PR; los commits
+    individuales siguen visibles en el PR, que es la evidencia de trazabilidad para la evaluación.
 
 ## Convenciones de ramas
 
@@ -108,26 +110,49 @@ Quien revisa comprueba, como mínimo:
 
 Comenta con respeto y de forma concreta: describe el problema, por qué importa y una alternativa.
 
+### Política de revisión para equipos pequeños
+
+Los equipos tienen de una a tres personas, por lo que no siempre habrá otro integrante disponible
+(o independiente) para revisar. Se aplica este orden:
+
+1. **Otro integrante del mismo equipo** que no sea coautor del cambio.
+2. Si no lo hay, **un estudiante de otro equipo**. Al inicio del curso, cada equipo tiene asignado
+   un **equipo revisor par**; los equipos de una persona se emparejan obligatoriamente.
+3. Si nadie puede revisar en **un día hábil**, o el cambio es sensible (seguridad, contratos
+   compartidos, infraestructura), **el instructor**.
+
+Reglas:
+
+- **Nadie puede aprobar su propio Pull Request.** GitHub no cuenta la aprobación del autor, y la
+  aprobación de un coautor tampoco se considera una revisión independiente.
+- Si el PR cambia un **contrato de API**, la revisión debe incluir a alguien del equipo consumidor.
+- La revisión cuenta para ambas personas: revisar con calidad forma parte de la evaluación.
+
 ## Protección de la rama `main`
 
 Configuración **recomendada** para quien administre el repositorio en GitHub
 (*Settings → Branches → Branch protection rules*, o *Rulesets*):
 
-- [ ] Prohibir push directo a `main`.
-- [ ] Requerir Pull Request antes de integrar.
-- [ ] Requerir al menos **una** aprobación.
-- [ ] Descartar aprobaciones obsoletas cuando se suben nuevos commits.
-- [ ] Requerir que las verificaciones de CI pasen (**cuando existan**).
-- [ ] Requerir que la rama esté actualizada antes de integrar.
-- [ ] Bloquear *force push*.
-- [ ] Bloquear la eliminación de la rama.
-- [ ] (Opcional) Requerir revisión de *Code Owners*, solo cuando `CODEOWNERS` tenga responsables reales.
+| Regla | Estado actual |
+|-------|---------------|
+| Prohibir push directo a `main` (requerir Pull Request) | ✅ Aplicada |
+| Requerir al menos **una** aprobación | ✅ Aplicada |
+| Descartar aprobaciones obsoletas cuando se suben nuevos commits | ✅ Aplicada |
+| Requerir resolver las conversaciones antes de integrar | ✅ Aplicada |
+| Bloquear *force push* | ✅ Aplicada |
+| Bloquear la eliminación de la rama | ✅ Aplicada |
+| Requerir que las verificaciones de CI pasen y que la rama esté actualizada | ⏳ Cuando exista el pipeline |
+| Requerir revisión de *Code Owners* | ⏳ Cuando `CODEOWNERS` tenga responsables reales |
+| Aplicar las reglas también a administradores (*enforce admins*) | ⏳ Desactivado: con un único administrador impediría integrar; activar cuando haya más revisores |
 
-> Estas reglas **no se han aplicado** automáticamente: requieren permisos de administración y una
-> decisión explícita de STDevSec Academy.
+Para consultar la configuración vigente (requiere `gh` autenticado):
+
+```bash
+gh api repos/STDevSec/st-servicehub/branches/main/protection
+```
 
 ## Bloqueos
 
-Si te bloqueas más de un día (dependencia de otro equipo, contrato indefinido, error de entorno),
+Si te bloqueas más de medio día (dependencia de otro equipo, contrato indefinido, error de entorno),
 comunícalo en el Issue con la etiqueta o mención correspondiente. Ver
 [cómo reportar bloqueos](docs/learning/student-guide.md#cómo-reportar-bloqueos).

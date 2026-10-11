@@ -53,8 +53,16 @@ Si encuentras una vulnerabilidad:
 - No explotes la vulnerabilidad más allá de lo necesario para demostrarla, y nunca fuera del entorno
   local del proyecto.
 
-> **Pendiente:** STDevSec Academy debe definir un canal de contacto oficial de seguridad y habilitar
-> el *Private Vulnerability Reporting* en GitHub si lo considera adecuado.
+> **Pendiente:** a fecha de la última auditoría ([bootstrap-audit.md](docs/audits/bootstrap-audit.md)),
+> el *Private Vulnerability Reporting* **no está habilitado** en el repositorio y no existe un canal de
+> contacto oficial de seguridad. Mientras tanto, contacta en privado con el equipo docente.
+> STDevSec Academy debe habilitar uno de los dos antes de abrir el repositorio a contribuciones.
+
+### Controles automáticos de GitHub
+
+Se recomienda activar en *Settings → Code security* (gratuitos en repositorios públicos):
+*Secret scanning*, *Push protection*, *Dependabot alerts* y *Private vulnerability reporting*.
+Su activación requiere permisos de administración y está pendiente de decisión.
 
 ## 5. Revisión de dependencias
 
