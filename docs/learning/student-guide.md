@@ -39,7 +39,7 @@ cp .env.example .env
 2. Completa **INTENT** y **SPEC** (alcance, exclusiones, reglas, contrato API, seguridad, criterios de
    aceptación y casos límite).
 3. Revisa los criterios de aceptación con tu equipo antes de programar.
-4. Completa **PLAN**, **TASKS** y **VERIFY** durante el desarrollo.
+4. Completa **PLAN**, **TASKS**, **IMPLEMENT** y **VERIFY** durante el desarrollo.
 
 Más detalles en [docs/specs/README.md](../specs/README.md).
 
@@ -59,8 +59,12 @@ Si `main` avanza mientras trabajas, actualiza tu rama:
 
 ```bash
 git fetch origin
-git rebase origin/main      # o: git merge origin/main
+git merge origin/main       # opción recomendada si ya subiste la rama
 ```
+
+Si prefieres `git rebase origin/main` y la rama ya estaba en GitHub, tendrás que reescribir **tu**
+rama remota con `git push --force-with-lease`. Nunca uses `--force` sobre ramas compartidas; sobre
+`main` está bloqueado.
 
 ## Cómo realizar commits
 
@@ -79,7 +83,7 @@ Usa [Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/):
 ## Cómo documentar pruebas
 
 - Cada criterio de aceptación de la spec debe estar cubierto por al menos una prueba.
-- Completa la tabla **5.1 Pruebas** de la spec, indicando qué criterio cubre cada prueba.
+- Completa la tabla **6.1 Pruebas** de la spec, indicando qué criterio cubre cada prueba.
 - En el PR, en **Pruebas ejecutadas**, pega el comando y un resumen del resultado, por ejemplo:
 
   ```text
@@ -100,8 +104,11 @@ Usa [Conventional Commits](https://www.conventionalcommits.org/es/v1.0.0/):
 
 ## Cómo solicitar revisión
 
-1. En el PR, en **Reviewers**, añade al menos a una persona de tu equipo. Si tu cambio afecta al
-   contrato o al servicio de otro equipo, añade también a alguien de ese equipo.
+1. En el PR, en **Reviewers**, añade al menos a una persona de tu equipo que no sea coautora. Si no
+   hay nadie disponible, sigue la
+   [política de revisión para equipos pequeños](../../CONTRIBUTING.md#política-de-revisión-para-equipos-pequeños)
+   (equipo revisor par o instructor). Si tu cambio afecta al contrato o al servicio de otro equipo,
+   añade también a alguien de ese equipo. No puedes aprobar tu propio PR.
 2. Responde a cada comentario: corrige y sube un nuevo commit, o explica por qué no.
 3. No marques como resueltas las conversaciones de otra persona sin su acuerdo.
 4. Cuando el PR esté aprobado y la CI en verde (cuando exista), se integra con *squash merge*.
@@ -131,7 +138,7 @@ equipo, error de entorno). Si llevas **más de medio día** sin avanzar:
 
 Cada estudiante debe entregar:
 
-- **2 vertical slices completas** dentro de su equipo. Una vertical slice es una funcionalidad de
+- **2 vertical slices completas y propias** (individuales) dentro de su equipo. Una vertical slice es una funcionalidad de
   extremo a extremo (UI → API → dominio → persistencia → pruebas) que aporta valor por sí misma.
   Ejemplo: "crear un ticket" o "listar los clientes activos".
 - **1 contribución transversal**, que beneficia a varios equipos. Ejemplos: configuración de seguridad

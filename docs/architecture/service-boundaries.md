@@ -30,7 +30,7 @@ es lo que permite que cada equipo trabaje, pruebe y despliegue su servicio de fo
 
 **Expone:** API de clientes, incluida la consulta de existencia/estado de un cliente por su id.
 
-**Depende de:** Identity solo para validar tokens.
+**Depende de:** Identity solo para validar tokens (ver nota sobre "token" en la matriz).
 
 ## Ticket Service — obligatorio
 
@@ -76,7 +76,9 @@ correctamente aunque Notification Service no exista o no esté disponible.
 | **Ticket**       | token | ✔ REST | — | — | opcional |
 | **Project**      | token | opcional | opcional | — | — |
 
-"token" = solo validación del token de acceso. Cualquier nueva dependencia entre servicios se documenta
+"token" = solo validación del token de acceso. Según el mecanismo que se elija
+([decisiones pendientes](technical-decisions-pending.md#d7-autenticación)), la validación puede hacerse
+**localmente** (p. ej. verificando la firma de un JWT) sin llamar a Identity en cada petición. Cualquier nueva dependencia entre servicios se documenta
 en esta matriz y, si es relevante, en un ADR.
 
 ## Por qué un servicio no accede a la base de datos de otro

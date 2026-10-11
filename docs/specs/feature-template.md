@@ -40,13 +40,13 @@ Proceso: INTENT → SPEC → PLAN → TASKS → IMPLEMENT → VERIFY
 
 <Qué incluye exactamente esta funcionalidad.>
 
-- 
+- <...>
 
 ### 2.2 Exclusiones
 
 <Qué NO incluye (se tratará en otro Issue o no se hará).>
 
-- 
+- <...>
 
 ### 2.3 Reglas de negocio
 
@@ -123,9 +123,21 @@ Proceso: INTENT → SPEC → PLAN → TASKS → IMPLEMENT → VERIFY
 
 ---
 
-## 5. VERIFY
+## 5. IMPLEMENT
 
-### 5.1 Pruebas
+<!-- Registro breve de la implementación. No copies código aquí: enlaza commits y PR. -->
+
+- **Rama:** `feature/<issue-id>-<descripcion>`
+- **Commits principales:** <hash — mensaje>
+- **Desviaciones de la spec:** <qué cambió respecto a lo planificado y por qué (y si se actualizó la spec)>
+- **Decisiones tomadas durante la implementación:** <...>
+- **Uso de IA:** <herramienta, para qué, qué revisaste o descartaste — ver docs/learning/ai-development-policy.md>
+
+---
+
+## 6. VERIFY
+
+### 6.1 Pruebas
 
 | Tipo | Qué se prueba | Criterio cubierto |
 |------|---------------|-------------------|
@@ -134,15 +146,15 @@ Proceso: INTENT → SPEC → PLAN → TASKS → IMPLEMENT → VERIFY
 | Frontend | <...> | <...> |
 | Manual | <...> | <...> |
 
-### 5.2 Evidencias
+### 6.2 Evidencias
 
 <!-- Salida de pruebas, capturas, peticiones/respuestas, enlace al PR y a la ejecución de CI.
      Sin tokens, contraseñas ni datos personales reales. -->
 
 - PR: #<id>
-- 
+- <...>
 
-### 5.3 Riesgos
+### 6.3 Riesgos
 
 | Riesgo | Impacto | Mitigación |
 |--------|---------|------------|
@@ -150,10 +162,11 @@ Proceso: INTENT → SPEC → PLAN → TASKS → IMPLEMENT → VERIFY
 
 ---
 
-## 6. Definition of Done
+## 7. Definition of Done
 
 - [ ] La spec está aprobada y refleja lo implementado.
 - [ ] Todos los criterios de aceptación se cumplen y tienen al menos una prueba.
+- [ ] La sección IMPLEMENT registra las desviaciones respecto a la spec.
 - [ ] Los casos límite están cubiertos por pruebas o justificados.
 - [ ] El contrato OpenAPI está actualizado (si aplica).
 - [ ] La autorización y la validación se aplican en el backend.

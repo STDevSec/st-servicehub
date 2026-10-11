@@ -12,9 +12,16 @@ Closes #
 
 <!-- Qué cambia y por qué. Breve y concreto. -->
 
-## Especificación
+## Especificación (SDD)
 
 <!-- Enlace a la spec en docs/specs/ (obligatorio para features). -->
+
+## Cambios realizados
+
+<!-- Lista de cambios concretos: archivos/componentes y qué se hizo en cada uno.
+     Indica si te desviaste de la spec y por qué. -->
+
+- <...>
 
 ## Tipo de cambio
 
@@ -42,7 +49,7 @@ Closes #
 
 <!-- Copia los criterios de la spec y marca los que se cumplen. -->
 
-- [ ] 
+- [ ] CA-1: <criterio>
 
 ## Pruebas ejecutadas
 

@@ -14,7 +14,7 @@ ST ServiceHub se compone de servicios pequeños, cada uno alineado con **un domi
 | Project Service | Proyectos | Opcional |
 | Notification Service | Notificaciones | Opcional |
 
-Cada servicio es una aplicación Spring Boot independiente, con su propio `pom.xml`, su propia base de
+Cada servicio será una aplicación Spring Boot independiente, con su propio `pom.xml`, su propia base de
 datos y su propio ciclo de construcción. Que todos convivan en un mismo repositorio
 ([ADR-0001](../decisions/ADR-0001-monorepo.md)) **no** los convierte en un monolito.
 
@@ -109,6 +109,10 @@ Las responsabilidades detalladas, lo que cada servicio **no** debe hacer y sus d
   ([`infrastructure/compose`](../../infrastructure/compose/README.md)).
 
 ## Decisiones pendientes
+
+Análisis completo con alternativas y recomendaciones en
+[technical-decisions-pending.md](technical-decisions-pending.md).
+
 
 - Versiones de Java, Spring Boot, Angular y Node.js.
 - Motor de base de datos relacional.
