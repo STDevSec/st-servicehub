@@ -1,0 +1,58 @@
+name: Bug report
+description: Reportar un comportamiento incorrecto.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **No reportes vulnerabilidades de seguridad aquí.** Sigue `SECURITY.md`.
+        No incluyas contraseñas, tokens ni datos personales reales en la evidencia.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamiento actual
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia
+      description: Logs, capturas, peticiones/respuestas HTTP. Elimina cualquier dato sensible.
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno
+      description: Servicio y rama/commit, sistema operativo, versiones de Java/Node/navegador, ejecución local o Docker.
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impacto
+      options:
+        - Crítico (bloquea el trabajo o compromete la seguridad)
+        - Alto (funcionalidad principal afectada, sin alternativa)
+        - Medio (existe una alternativa)
+        - Bajo (cosmético o menor)
+    validations:
+      required: true

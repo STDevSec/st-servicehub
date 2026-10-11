@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Política de seguridad
+    url: https://github.com/STDevSec/st-servicehub/blob/main/SECURITY.md
+    about: No reportes vulnerabilidades en Issues públicos. Sigue esta política.
+  - name: Guía de contribución
+    url: https://github.com/STDevSec/st-servicehub/blob/main/CONTRIBUTING.md
+    about: Flujo de trabajo, convenciones de ramas, commits y Pull Requests.

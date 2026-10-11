@@ -1,0 +1,51 @@
+# =====================================================================
+# CODEOWNERS — ST ServiceHub
+# ---------------------------------------------------------------------
+# ESTADO: plantilla. Todas las reglas están COMENTADAS a propósito.
+# Todavía no se conocen los responsables reales, y una referencia a un
+# usuario o equipo inexistente es inválida para GitHub. Además, si se
+# activa "Require review from Code Owners", reglas ficticias podrían
+# bloquear la integración de PRs.
+#
+# Cómo configurarlo:
+#   1. Crear los equipos en la organización de GitHub (p. ej. un equipo
+#      por servicio) y darles al menos permiso de escritura (write) en
+#      el repositorio.
+#   2. Descomentar las líneas necesarias y sustituir <owner> por
+#      @<organizacion>/<equipo> o @<usuario> reales.
+#   3. Verificar en GitHub (vista del archivo CODEOWNERS) que no se
+#      muestran errores.
+#   4. Solo entonces, valorar activar "Require review from Code Owners"
+#      en la protección de `main`.
+#
+# Sintaxis: <patrón> <owner> [<owner> ...]
+# La ÚLTIMA regla que coincide es la que aplica.
+# Docs: https://docs.github.com/es/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# =====================================================================
+
+# Responsables por defecto
+# *                               <owner>
+
+# Servicios
+# /services/identity-service/     <owner>
+# /services/client-service/       <owner>
+# /services/ticket-service/       <owner>
+# /services/project-service/      <owner>
+# /services/notification-service/ <owner>
+
+# Frontend
+# /frontend/                      <owner>
+
+# Contratos de API (revisión del equipo productor y consumidores)
+# /docs/api/                      <owner>
+
+# Arquitectura y decisiones
+# /docs/architecture/             <owner>
+# /docs/decisions/                <owner>
+
+# Infraestructura y CI
+# /infrastructure/                <owner>
+
+# Configuración del repositorio y políticas
+# /.github/                       <owner>
+# /SECURITY.md                    <owner>

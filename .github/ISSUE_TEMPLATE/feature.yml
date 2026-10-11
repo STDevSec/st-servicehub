@@ -1,0 +1,71 @@
+name: Feature
+description: Proponer una nueva funcionalidad o vertical slice.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe **qué** se necesita y **por qué**. El **cómo** se detalla después en la especificación
+        (`docs/specs/feature-template.md`).
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: ¿Qué problema de negocio resuelve esta funcionalidad?
+    validations:
+      required: true
+  - type: textarea
+    id: user-story
+    attributes:
+      label: Historia de usuario
+      value: |
+        Como <rol>,
+        quiero <acción>,
+        para <beneficio>.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Criterios de aceptación
+      description: Condiciones verificables. Se recomienda el formato Dado / Cuando / Entonces.
+      value: |
+        - [ ] Dado ..., cuando ..., entonces ...
+    validations:
+      required: true
+  - type: dropdown
+    id: service
+    attributes:
+      label: Servicio afectado
+      multiple: true
+      options:
+        - identity-service
+        - client-service
+        - ticket-service
+        - project-service
+        - notification-service
+        - frontend (angular-app)
+        - infrastructure
+        - docs
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencias
+      description: Issues, contratos de API u otros equipos de los que depende este trabajo.
+      placeholder: "Depende de #..."
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridad
+      options:
+        - Alta
+        - Media
+        - Baja
+      default: 1
+    validations:
+      required: true
